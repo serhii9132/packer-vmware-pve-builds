@@ -1,10 +1,29 @@
+Proxmox Virtual Environment Vagrant image for VMware Workstation Pro
+
+Template parameters:
+```sh
+OS version: Proxmox backup server 4.2-1
+Cores: 4
+Socket: 1
+RAM: 8Gb
+Disk size: 200 Gb
+```
+
+The following OS versions are available:
+- Proxmox VE 8.4.1
+- Proxmox VE 9.2.1
+
 ### Usage
 
 1. Create a .env file in the root of the project with the following content:
 ```sh
-export PASSWORD='$6$aJcAVcNj.....'                 # Use: mkpasswd -m sha-512
-export PUBLIC_KEY='ssh-ed25519 AAAAC...'   
-export PRIVATE_KEY_FILE='D://.ssh//keys//key.pem'
+PKR_VAR_hash_ssh_pass='$6$aJcAVcNj.....'                # Use: mkpasswd -m sha-512
+PKR_VAR_public_key='ssh-ed25519 AAAAC...'  
+PKR_VAR_private_key_file='D://.ssh//keys//key.pem'
+
+PKR_VAR_ip='192.168.0.10'
+PKR_VAR_mask='24'
+PKR_VAR_gateway='192.168.0.1'
 ```
 2. Run build:
 ```sh
