@@ -9,7 +9,6 @@ LOAD_ENV := set -a; [ -f $(ENV_FILE) ] && . ./$(ENV_FILE); set +a
 .PHONY: all clean proxmox-8 proxmox-9
 
 define build-vm
-	@echo "--- Building Proxmox $(1) ---"
 	@mkdir -p $(LOG_DIR)
 	@packer init proxmox.pkr.hcl
 	@$(LOAD_ENV) && \
@@ -30,5 +29,4 @@ proxmox-9:
 	$(call build-vm,9,proxmox-ve_9.2-1.iso,4e88fe416df9b527624a175f24c9aa07c714d3332afb1ee3dbf3879573ef2c6c,debian13-64)
 
 clean:
-	@echo "Cleaning up builds and caches..."
-	@rm -rf $(BUILDS_DIR) packer_cache logs
+	rm -rf $(BUILDS_DIR) packer_cache logs
