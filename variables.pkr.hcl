@@ -46,3 +46,7 @@ variable "public_key" {
 variable "private_key_file" {
     type = string
 }
+
+variable "fqdn" {
+    type = string
+}

@@ -1,6 +1,6 @@
 [global]
 country = "ua"
-fqdn = "pve.home.arpa"
+fqdn = "${var.fqdn}"
 keyboard = "en-us"
 mailto = "root@pve"
 timezone = "UTC"
